@@ -23,10 +23,10 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import 'package:flutter_flavorizr/extensions/extensions+map.dart';
 import 'package:flutter_flavorizr/parser/models/flavorizr.dart';
 import 'package:flutter_flavorizr/processors/android/google/firebase/android_target_firebase_processor.dart';
 import 'package:flutter_flavorizr/processors/commons/queue_processor.dart';
+import 'package:flutter_flavorizr/utils/constants.dart';
 
 class AndroidFirebaseProcessor extends QueueProcessor {
   AndroidFirebaseProcessor({
@@ -34,12 +34,11 @@ class AndroidFirebaseProcessor extends QueueProcessor {
     required Flavorizr config,
   }) : super(
           config.flavors
-              .where((flavorName, flavor) => flavor.android.firebase != null)
               .map(
                 (flavorName, flavor) => MapEntry(
                   flavorName,
                   AndroidTargetFirebaseProcessor(
-                    flavor.android.firebase!.config,
+                    K.tempFirebasePathAndroid,
                     destination,
                     flavorName,
                     config: config,

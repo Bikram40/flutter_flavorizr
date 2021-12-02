@@ -41,12 +41,12 @@ class FirebaseProcessor extends QueueProcessor {
     required Flavorizr config,
   }) : super(
           [
-            if (androidFirebaseExists(config.flavors.values))
+            // if (androidFirebaseExists(config.flavors.values))
               AndroidFirebaseProcessor(
                 destination: androidDestination,
                 config: config,
               ),
-            if (iosFirebaseExists(config.flavors.values))
+            // if (iosFirebaseExists(config.flavors.values))
               IOSTargetsFirebaseProcessor(
                 process: process,
                 destination: iosDestination,
@@ -63,9 +63,9 @@ class FirebaseProcessor extends QueueProcessor {
   @override
   String toString() => 'FirebaseProcessor';
 
-  static androidFirebaseExists(Iterable<Flavor> values) =>
-      values.where((flavor) => flavor.android.firebase != null).isNotEmpty;
-
-  static iosFirebaseExists(Iterable<Flavor> values) =>
-      values.where((flavor) => flavor.ios.firebase != null).isNotEmpty;
+  // static androidFirebaseExists(Iterable<Flavor> values) =>
+  //     values.where((flavor) => flavor.android.firebase != null).isNotEmpty;
+  //
+  // static iosFirebaseExists(Iterable<Flavor> values) =>
+  //     values.where((flavor) => flavor.ios.firebase != null).isNotEmpty;
 }

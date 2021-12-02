@@ -43,7 +43,6 @@ class DownloadFileProcessor extends AbstractFileProcessor {
   @override
   void execute() async {
     HttpClient client = new HttpClient();
-
     HttpClientRequest request = await client.getUrl(Uri.parse(_url));
     HttpClientResponse response = await request.close();
     await response.pipe(this.file.openWrite());

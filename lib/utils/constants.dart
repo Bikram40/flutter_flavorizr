@@ -58,12 +58,19 @@ class K {
   static String assetsZipPath = 'assets.tmp.zip';
 
   static String tempPath = '.tmp';
+  static String assets = '/assets';
 
-  static String tempAndroidPath = '$tempPath/android';
+  static String tempAndroidPath = '$tempPath$assets/android';
+
+  static String tempFirebasePath = '$tempPath$assets/firebase';
+  static String tempFirebasePathIos =
+      '$tempFirebasePath/ios/GoogleService-Info.plist';
+  static String tempFirebasePathAndroid =
+      '$tempFirebasePath/android/google-services.json';
 
   static String tempAndroidResPath = '$tempAndroidPath/res';
 
-  static String tempFlutterPath = '$tempPath/flutter';
+  static String tempFlutterPath = '$tempPath$assets/flutter';
 
   static String tempFlutterAppPath = '$tempFlutterPath/app.dart';
 
@@ -71,7 +78,7 @@ class K {
 
   static String tempFlutterPagesPath = '$tempFlutterPath/pages';
 
-  static String tempiOSPath = '$tempPath/ios';
+  static String tempiOSPath = '$tempPath$assets/ios';
 
   static String tempiOSAssetsPath = '$tempiOSPath/Assets.xcassets';
 
@@ -80,7 +87,7 @@ class K {
 
   static String tempiOSFirebaseScriptPath = '$tempiOSPath/firebaseScript.sh';
 
-  static String tempScriptsPath = '$tempPath/scripts';
+  static String tempScriptsPath = '$tempPath$assets/scripts';
 
   static String tempiOSScriptsPath = '$tempScriptsPath/ios';
 

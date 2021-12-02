@@ -33,7 +33,6 @@ import 'package:flutter_flavorizr/processors/commons/abstract_processor.dart';
 import 'package:flutter_flavorizr/processors/commons/copy_file_processor.dart';
 import 'package:flutter_flavorizr/processors/commons/copy_folder_processor.dart';
 import 'package:flutter_flavorizr/processors/commons/delete_file_processor.dart';
-import 'package:flutter_flavorizr/processors/commons/download_file_processor.dart';
 import 'package:flutter_flavorizr/processors/commons/existing_file_string_processor.dart';
 import 'package:flutter_flavorizr/processors/commons/new_file_string_processor.dart';
 import 'package:flutter_flavorizr/processors/commons/queue_processor.dart';
@@ -50,6 +49,8 @@ import 'package:flutter_flavorizr/processors/ios/launch_screen/ios_targets_launc
 import 'package:flutter_flavorizr/processors/ios/xcconfig/ios_xcconfig_targets_file_processor.dart';
 import 'package:flutter_flavorizr/utils/constants.dart';
 
+import 'commons/download_file_processor.dart';
+
 class Processor extends AbstractProcessor<void> {
   final Map<String, AbstractProcessor<void>> _availableProcessors;
 
@@ -65,10 +66,10 @@ class Processor extends AbstractProcessor<void> {
     'android:dummyAssets',
 
     // Flutter
-    'flutter:flavors',
-    'flutter:app',
-    'flutter:pages',
-    'flutter:targets',
+    // 'flutter:flavors',
+    // 'flutter:app',
+    // 'flutter:pages',
+    // 'flutter:targets',
 
     // iOS
     'ios:xcconfig',

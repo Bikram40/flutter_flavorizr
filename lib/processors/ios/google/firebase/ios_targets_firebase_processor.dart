@@ -23,7 +23,6 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import 'package:flutter_flavorizr/extensions/extensions+map.dart';
 import 'package:flutter_flavorizr/parser/models/flavorizr.dart';
 import 'package:flutter_flavorizr/parser/models/flavors/flavor.dart';
 import 'package:flutter_flavorizr/processors/commons/empty_file_processor.dart';
@@ -32,6 +31,7 @@ import 'package:flutter_flavorizr/processors/commons/queue_processor.dart';
 import 'package:flutter_flavorizr/processors/commons/shell_processor.dart';
 import 'package:flutter_flavorizr/processors/ios/google/firebase/ios_firebase_processor.dart';
 import 'package:flutter_flavorizr/processors/ios/google/firebase/ios_firebase_script_processor.dart';
+import 'package:flutter_flavorizr/utils/constants.dart';
 import 'package:flutter_flavorizr/utils/ios_utils.dart' as IOSUtils;
 
 class IOSTargetsFirebaseProcessor extends QueueProcessor {
@@ -50,7 +50,7 @@ class IOSTargetsFirebaseProcessor extends QueueProcessor {
                   (flavorName, flavor) => MapEntry(
                     flavorName,
                     IOSFirebaseProcessor(
-                      flavor.ios.firebase!.config,
+                      K.tempFirebasePathIos,
                       destination,
                       flavorName,
                       config: config,
@@ -94,6 +94,5 @@ class IOSTargetsFirebaseProcessor extends QueueProcessor {
   String toString() => 'IOSTargetsFirebaseProcessor';
 
   static Map<String, Flavor> _filteredFlavors(Flavorizr config) =>
-      config.flavors
-          .where((flavorName, flavor) => flavor.android.firebase != null);
+      config.flavors;
 }
